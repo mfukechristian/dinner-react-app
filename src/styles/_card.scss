@@ -1,0 +1,146 @@
+//general card section styling
+.card {
+    @include mQ(1080px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 110px;
+    }
+
+    @include mQ(1440px) {
+        padding: 0 165px;
+        // align-items: flex-end; 
+        margin-top: -12px;
+        z-index: 20;
+    }
+}
+
+// ********************************************** 
+
+.cards__section {
+    position: relative;
+    top: 148px;
+
+    @include mQ(680px) {
+        top: 321px;
+
+        &::before,
+        &::after {
+            position: absolute;
+            width: 49%;
+            height: 320px;
+            background-color: #ededed;
+            content: "";
+            z-index: -1;
+        }
+
+        &::before {
+            left: 0;
+            top: 198px;
+            border-top-right-radius: 100px;
+        }
+
+        &::after {
+            bottom: -112px;
+            border-top-left-radius: 70px;
+        }
+
+    }
+
+    @include mQ(1080px) {
+        top: -58px;
+
+        &::before {
+            top: 310px;
+            width: 62%;
+        }
+
+        &::after {
+            bottom: 45px;
+            width: 62%;
+            right: 0;
+        }
+    }
+
+}
+// ****************************************************
+.card__main {
+    position: relative;
+    margin-top: 24px;
+    padding: 0 9px;
+    margin-bottom: 76px;
+
+    &::before {
+        position: relative;
+        content: url("../assets/images/patterns/pattern-divide.svg");
+        top: 21px;
+    }
+
+    @include mQ(680px) {
+        margin-bottom: 114px;
+        // flex: 2 1 60%;
+
+        &::before {
+            top: 18px;
+        }
+    }
+
+    @include mQ(1080px) {
+        padding: 0 61px;
+
+        &::before {
+            left: 61px;
+            top: 0px;
+            position: absolute;
+        }
+    }
+}
+
+// ********************************************************
+.card__main__title {
+    @include cardHeadings;
+}
+
+.card__main__descr {
+    @include cardDescriptions;
+    max-width: 100%;
+}
+
+.card__img {
+    box-shadow: 0px 38px 20px 17px #ededed;
+
+    img {
+        max-width: 100%;
+        position: relative;
+    }
+
+    @include mQ(680px) {
+        z-index: 1;
+    }
+
+    @include mQ(1080px) {
+        box-shadow: none;
+    }
+}
+// **************************************************
+.imageStyle {
+    @include mQ(680px) {
+        position: relative;
+
+        &::before {
+            top: 228px;
+            position: absolute;
+            right: 40px;            
+            content: url("../assets/images/patterns/pattern-lines.svg");            
+        }
+    }
+
+    @include mQ(1080px) {
+        flex-direction: row-reverse;
+    }
+
+    @include mQ(1440px) {
+        margin-top: 118px;
+    }
+
+}

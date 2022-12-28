@@ -1,0 +1,109 @@
+//header section
+.hero {
+    position: relative;
+    background-image: url('../assets/images/homepage/hero-bg-mobile@2x.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;   
+    background-position: top;
+
+    @include mQ(780px) {
+        background-image: url('../assets/images/homepage/hero-bg-tablet@2x.jpg');
+    }
+
+    @include mQ(1080PX) {
+        background-image: url('../assets/images/homepage/hero-bg-desktop@2x.jpg');
+    }
+}
+
+.hero__main {
+    position: relative;
+    top: 220px;
+    color: $white-tx;
+    background-color: $very-dark-bg;
+    padding: 12px 24px;
+
+    @include mQ(680px) {
+        top: 380px;
+    }
+
+    @include mQ(1080px) {
+        top: 0px;
+        width: 45%;
+        padding-top: 65px;
+        padding-left: 125px;
+        background-image: linear-gradient(to right, #000000 55%, #111111 50%);
+    }
+
+    @include mQ(1440px) {
+        padding-left: 165px;
+    }
+
+}
+
+.hero__main__logo {
+    @include mQ(1080px) {
+        margin: 0;
+        display: block;
+    }
+}
+
+.hero__main__btncontainer {
+    padding-bottom: 145px;
+
+    @include mQ(1080px) {
+        padding-bottom: 127px;
+    }
+
+    @include mQ(1440px) {
+        padding-bottom: 189px;
+    }
+}
+
+
+
+.hero__main__title {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+    margin-top: 16px;
+
+    @include mQ(680px) {
+        font-size: calculateRem(48);
+        line-height: 64px;
+        letter-spacing: -0.6px;
+        width: 60%;
+        margin: 24px auto;
+    }
+
+    @include mQ(1080px) {
+        text-align: left;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    @include mQ(1440px) {
+        margin: 146px 0 45px;
+        width: 75%;
+    }
+}
+
+.hero__main__descr {
+    font-size: calculateRem(15);
+    line-height: 25px;
+    font-weight: 300;
+    letter-spacing: -0.19px;
+    max-width: 30rem;
+    margin: 24px auto 36px;
+
+    @include mQ(680px) {
+        font-size: calculateRem(18);
+        line-height: 30px;
+        letter-spacing: -0.22px;
+    }
+
+    @include mQ(1080px) {
+        text-align: left;
+        margin: 24px 0 45px;
+    }
+}

@@ -1,0 +1,161 @@
+//menu section - selection menu
+.menu__section {
+    top: 150px;
+    position: relative;
+    background-color: $dark-bg;
+    color: $white-tx;
+    padding: 62px 24px;
+
+    &::before {
+        position: absolute;
+        content: url('../assets/images/patterns/pattern-divide.svg');
+        left: 0;
+        right: 0;
+    }
+
+    @include mQ(680px) {
+        top: 318px;
+        margin-bottom: -202px;
+        padding: 62px 97px;
+
+        &::before {
+            top: 25px;
+        }
+    }
+
+    @include mQ(1080px) {
+        display: flex;
+        top: 58px;
+        padding: 145px 125px;
+        flex-direction: column;
+    }
+
+    @include mQ(1280px) {
+        top: -140px;
+        padding: 185px 165px 115px;
+        flex-direction: row;
+        gap: 20px;
+
+        &::before {
+            left: 165px;
+            right: auto;
+            top: 200px;
+        }
+    }
+
+}
+
+.menu__headings {
+    @include mQ(1440px) {
+        // margin-left: -75px;
+    }
+}
+
+.menu__headings__title {
+    @include cardHeadings;
+
+    @include mQ(680px) {
+        margin: 15px auto 25px;
+    }
+}
+
+.menu__headings__descr {
+    @include cardDescriptions;
+
+    @include mQ(1080px) {
+        text-align: center;
+        margin: auto;
+    }
+
+    @include mQ(1280px) {
+        text-align: left;
+        margin-left: 0;
+    }
+}
+
+.menu__cards {
+    margin-top: 60px;
+
+    @include mQ(680px) {
+        margin-top: 24px;
+    }
+}
+
+.menuTitle {
+    font-size: calculateRem(18);
+
+    @include mQ(680px) {
+        margin: 2px auto 10px;
+        line-height: 28px;
+    }
+
+}
+
+.menuDescr {
+    @include mQ(680px) {
+        line-height: 28px;
+    }
+}
+
+.cardShadow {
+    box-shadow: none;
+
+    img {
+        max-width: 100%;
+        display: block;
+        margin: auto;
+    }
+
+    @include mQ(1080px) {
+        img {
+            max-width: 60%;
+        }
+    }
+}
+
+.bottomBorder {
+    border-bottom: 1px solid $lt-grey-bg;
+    margin-bottom: 5px;
+}
+
+// 
+.hideBefore {
+    top: -45px;
+    margin-bottom: -20px;
+
+    &::before {
+        content: "";
+    }
+
+}
+
+.cardMenu {
+    position: relative;
+
+    @include mQ(680px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // padding: 0 97px;
+
+        &::before {
+            content: url('../assets/images/patterns/pattern-divide.svg');
+            position: absolute;
+            top: 45px;
+            left: 90px;
+            z-index: 0;
+        }
+
+    }
+
+    @include mQ(1280px) {
+        padding: 0;
+
+        &::before {
+            top: 58px;
+            left: 137px;
+            z-index: 0;
+        }
+
+    }
+}

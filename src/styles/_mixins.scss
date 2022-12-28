@@ -1,0 +1,58 @@
+@mixin mQ($arg) {
+    @media screen and (min-width: $arg) {
+        @content;
+    }
+}
+
+@mixin cardHeadings {
+    padding-top: 42px;
+    font-size: calculateRem(32);
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    line-height: 40px;
+    margin-bottom: 20px;
+
+    @include mQ(680px) {
+        margin: 10px auto 24px;
+        max-width: 28rem;
+        line-height: 56px;
+        font-size: calculateRem(40);
+        letter-spacing: -0.5px;
+    }
+
+    @include mQ(1080px) {        
+        max-width: 30rem;
+    }
+
+    @include mQ(1280px) {
+        margin-top: 70px;
+        text-align: left;
+        margin-left: 0;
+        margin-top: 0px;
+    }
+}
+
+@mixin cardDescriptions {
+    line-height: 25px;
+    letter-spacing: -0.19px;
+    font-size: calculateRem(15);
+
+    @include mQ(680px) {
+        max-width: 24rem;
+        margin: auto;
+        line-height: 30px;
+        letter-spacing: -0.22px;
+    }
+
+    @include mQ(1280px) {
+        text-align: left;
+        margin-left: 0;
+    }
+}
+
+// Function for converting a px based font-size to rem.
+@function calculateRem($size) {
+    $remSize: $size / 16;
+    //Default font size on html element is 100%, equivalent to 16px;
+    @return #{$remSize}rem;
+}
